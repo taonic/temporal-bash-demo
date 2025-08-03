@@ -4,7 +4,7 @@ A demo of Temporal workflow execution using pure bash and gRPC calls.
 
 ## Overview
 
-[![asciicast](https://asciinema.org/a/ELnZYLnTs3cA9A0jUDox7xiB3.svg)](https://asciinema.org/a/ELnZYLnTs3cA9A0jUDox7xiB3)
+<a href="https://asciinema.org/a/CNx6PUlOehsMGkv0Jtaya09kK"><img src="demo.gif" alt="Demo" autoplay loop></a>
 
 This demo implements a complete but simple Temporal workflow lifecycle using bash scripts and `grpcurl`. It includes:
 
