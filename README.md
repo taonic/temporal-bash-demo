@@ -1,10 +1,12 @@
-# Bash Temporal Demo
+# Temporal Bash Demo
 
-A demonstration of Temporal workflow execution using pure bash and gRPC calls. This project shows how to interact with Temporal Server directly via gRPC without using any Temporal SDK.
+A demo of Temporal workflow execution using pure bash and gRPC calls.
 
 ## Overview
 
-This demo implements a complete Temporal workflow lifecycle using bash scripts and `grpcurl`. It demonstrates:
+[![asciicast](https://asciinema.org/a/ELnZYLnTs3cA9A0jUDox7xiB3.svg)](https://asciinema.org/a/ELnZYLnTs3cA9A0jUDox7xiB3)
+
+This demo implements a complete but simple Temporal workflow lifecycle using bash scripts and `grpcurl`. It includes:
 
 - Starting a workflow execution
 - Polling for workflow tasks

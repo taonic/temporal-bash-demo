@@ -13,6 +13,12 @@ if ! command -v bats &> /dev/null; then
     fi
 fi
 
+if ! grpcurl -plaintext localhost:7233 list > /dev/null 2>&1; then
+    echo "Starting Temporal server..."
+    temporal server start-dev --dynamic-config-value history.defaultWorkflowTaskTimeout=30 &
+    sleep 3
+fi
+
 # Run the tests
 echo "Running bash script tests..."
-bats e2e.bats
+bats --verbose-run e2e.bats

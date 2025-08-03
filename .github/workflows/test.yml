@@ -1,0 +1,32 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq bats
+        
+        # Install grpcurl
+        curl -sSL "https://github.com/fullstorydev/grpcurl/releases/download/v1.8.9/grpcurl_1.8.9_linux_x86_64.tar.gz" | sudo tar -xz -C /usr/local/bin grpcurl
+    
+    - name: Start Temporal Server and Run tests
+      run: |
+        # Install Temporal CLI
+        curl -sSf https://temporal.download/cli.sh | sh
+        export PATH="$PATH:/home/runner/.temporalio/bin"
+        
+        # Run test
+        cd tests
+        ./test.sh
